@@ -9,14 +9,14 @@ default: &default
 
 development:
   <<: *default
-  database: doorkeeper_development
+  database: silva_numerica_oauth_provider_development
 
 test:
   <<: *default
-  database: doorkeeper_development
+  database: silva_numerica_oauth_provider_development
 
 production:
   <<: *default
-  database: doorkeeper_production
+  database: silva_numerica_oauth_provider_production
   username: <%= Rails.application.credentials.dig(:production, :database_user) %>
   password: <%= Rails.application.credentials.dig(:production, :database_pass) %>
