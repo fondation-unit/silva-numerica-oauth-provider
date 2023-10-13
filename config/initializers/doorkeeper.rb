@@ -263,7 +263,14 @@ Doorkeeper.configure do
   #   http://tools.ietf.org/html/rfc6819#section-4.4.2
   #   http://tools.ietf.org/html/rfc6819#section-4.4.3
   #
-  # grant_flows %w[authorization_code client_credentials]
+  grant_flows %w[password authorization_code client_credentials]
+
+  resource_owner_from_credentials do |routes|
+    user = User.find_for_database_authentication(email: params[:username])
+    if user && user.valid_password?(params[:password])
+      user
+    end
+  end
 
   # Hook into the strategies' request & response life-cycle in case your
   # application needs advanced customization or logging:
