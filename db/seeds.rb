@@ -3,7 +3,7 @@
 owner = User.create!(
   email: "user@example.com",
   firstname: "Admin",
-  lastname: "User"
+  lastname: "User",
   password: "#{ENV["ADMIN_PASSWORD"]}",
   password_confirmation: "#{ENV["ADMIN_PASSWORD"]}"
 )
