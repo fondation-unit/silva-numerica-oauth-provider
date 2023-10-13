@@ -107,3 +107,72 @@ If you attempt to access any of the protected resources without an proper access
 
 You can manage all client applications in `/oauth/applications`.
 
+## Usage with Moodle
+
+1. Enable the OAuth authentication plugin
+2. Under `Server > Services OAuth 2` declare a new Custom service
+3. Fill in the settings :
+
+|Keys|Values|
+|----|------|
+|Name|****|
+|Client ID|****|
+|Client Secret|****|
+|Service base URL|****|
+|This service will be used|Login page and internal services|
+|Scopes included in a login request|read|
+|Scopes included in a login request for offline access|read|
+|Require email verification|true|
+
+4. Under `Configure Endpoints (/admin/tool/oauth2/endpoints.php)` declare the following endpoints :
+
+|Keys|Values|
+|----|------|
+|discovery_endpoint|https://doorkeeper.mydomain.com/oauth/applications|
+|authorization_endpoint|https://doorkeeper.mydomain.com/oauth/oauth/authorize|
+|token_endpoint|https://doorkeeper.mydomain.com/oauth/oauth/token|
+|revocation_endpoint|https://doorkeeper.mydomain.com/oauth/revoke|
+|userinfo_endpoint|https://doorkeeper.mydomain.com/api/v1/me.json|
+
+5. Configure the `User fields mapping /admin/tool/oauth2/userfieldmappings.php` :
+
+|Keys|Values|
+|----|------|
+|firstname|firstname|
+|lastname|firstname|
+|email|email|
+
+## Usage with API
+
+1. POST request to the token endpoint to get the access_token :
+
+`POST : https://uri.../oauth/token`
+
+`Body : Multipart Form`
+
+|Keys|Values|
+|----|------|
+|client_id|********|
+|client_secret|********|
+|grant_type|password|
+|username|email@example.com|
+|password|********|
+
+The response should be in like this :
+
+```json
+{
+  "access_token": "kdrfVrw8HInqhUweeBnZoDJD8Cm4UXE3QeQt9rSnqZR",
+  "token_type": "Bearer",
+  "expires_in": 7200,
+  "refresh_token": "POadph1Enla7Fxy3GpgO7zk8o7U0Zyg9xDwimCP0PsB",
+  "scope": "read",
+  "created_at": 1697190055
+}
+```
+
+2. GET request to the credentials endpoint :
+
+`GET : https://uri.../api/v1/me.json`
+
+Headers : `authorization Bearer kdrfVrw8HInqhUweeBnZoDJD8Cm4UXE3QeQt9rSnqZR`
