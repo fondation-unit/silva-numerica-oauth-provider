@@ -86,6 +86,21 @@ module Api::V1
 end
 ```
 
+Or:
+
+``` ruby
+module Api::V1
+  class ProjectsController < ApiController
+    before_action -> { doorkeeper_authorize! :read }, only: %i[index show]
+    before_action -> { doorkeeper_authorize! :write }, only: %i[create update destroy]
+
+    def index
+      render json: current_resource_owner.projects
+    end
+  end
+end
+```
+
 However, see also the Doorkeeper wiki article about [using scopes](https://github.com/doorkeeper-gem/doorkeeper/wiki/Using-Scopes).
 
 If you attempt to access any of the protected resources without an proper access token, you'll get an `401 Unauthorized` response.
