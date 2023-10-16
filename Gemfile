@@ -9,18 +9,6 @@ gem "doorkeeper", "~> 5.6.6"
 gem "devise", "~> 4.9"
 gem "sprockets-rails", require: "sprockets/railtie"
 
-gem "faker"
-gem "coderay"
-gem "redcarpet"
-gem "uglifier"
-gem "puma"
-gem "rack-timeout"
-gem "mysql2"
-gem "dotenv-rails", require: "dotenv/rails-now", groups: [:development, :test]
-gem "jsbundling-rails", "~> 1.2.1"
-gem "cssbundling-rails", "~> 1.3"
-gem "turbo-rails"
-
 group :development do
   gem "web-console"
 
@@ -40,3 +28,16 @@ group :development, :test do
 
   gem "pry-rails"
 end
+
+gem "faker"
+gem "coderay"
+gem "redcarpet"
+gem "uglifier"
+gem "puma"
+gem "rack-timeout"
+gem "mysql2"
+gem "dotenv-rails", require: "dotenv/rails-now", groups: [:development, :test]
+gem "jsbundling-rails", "~> 1.2.1"
+gem "cssbundling-rails", "~> 1.3"
+gem "turbo-rails"
+gem "pundit", "~> 2.3"

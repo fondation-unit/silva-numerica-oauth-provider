@@ -13,6 +13,7 @@ class OauthApplicationsController < ApplicationController
 
   def new
     @application = current_user.oauth_applications.new
+    authorize @application
   end
 
   def create
