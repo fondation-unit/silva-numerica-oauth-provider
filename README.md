@@ -105,6 +105,18 @@ However, see also the Doorkeeper wiki article about [using scopes](https://githu
 
 If you attempt to access any of the protected resources without an proper access token, you'll get an `401 Unauthorized` response.
 
+## Assets
+
+Include `doorkeeper/application.css` and `doorkeeper/admin/application.css` in `app/assets/config/manifest.js`, like this:
+
+``` js
+//= link_tree ../images
+//= link_tree ../../javascript .js
+//= link_tree ../builds
+//= link doorkeeper/application.css
+//= link doorkeeper/admin/application.css
+```
+
 ## Client applications
 
 You can manage all client applications in `/oauth/applications`.
