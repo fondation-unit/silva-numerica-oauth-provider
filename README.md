@@ -1,18 +1,16 @@
-# Doorkeeper Provider App
+# Silva Numerica Provider App
 
-[![CI](https://github.com/doorkeeper-gem/doorkeeper-provider-app/actions/workflows/ci.yml/badge.svg)](https://github.com/doorkeeper-gem/doorkeeper-provider-app/actions/workflows/ci.yml)
+This app is an OAuth 2 provider using [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper), [Rails 7.1](http://rubyonrails.org/), MySQL and [Devise](https://github.com/plataformatec/devise).
 
-This app is an example of an OAuth 2 provider using [Doorkeeper gem](https://github.com/doorkeeper-gem/doorkeeper), [Rails 7.x](http://rubyonrails.org/) and [Devise](https://github.com/plataformatec/devise).
+## Doorkeeper Gem
 
-## About Doorkeeper Gem
-
-For more information [about the gem](https://github.com/doorkeeper-gem/doorkeeper), [documentation](https://github.com/doorkeeper-gem/doorkeeper#readme), [wiki](https://github.com/doorkeeper-gem/doorkeeper/wiki/_pages) and another resources, check out the project [on GitHub](https://github.com/doorkeeper-gem/doorkeeper)
+Information [about the gem](https://github.com/doorkeeper-gem/doorkeeper), [documentation](https://github.com/doorkeeper-gem/doorkeeper#readme), [wiki](https://github.com/doorkeeper-gem/doorkeeper/wiki/_pages) and another resources : [on GitHub](https://github.com/doorkeeper-gem/doorkeeper)
 
 ## Installation
 
 First clone the [repository from GitHub](https://github.com/doorkeeper-gem/doorkeeper-provider-app):
 
-    git clone git@github.com:doorkeeper-gem/doorkeeper-provider-app.git
+    git clone git@github.com:fondation-unit/silva-numerica-oauth-provider.git
 
 Install all dependencies with:
 
@@ -28,17 +26,7 @@ The configuration is quite simple, all you need to do is run:
 
     bin/rails db:setup
 
-This will generate all necessary tables, create fake data, create an user and a client application.
-
-## Seed data
-
-The generated user email is `user@example.com` and password is `doorkeeper`.
-
-The application `id` and `secret` will show up on terminal when the script ends.
-
-After that, you can just fire up the `bin/rails server` and you're ready to go.
-
-## OAuth Endpoint
+## OAuth endpoints
 
 The endpoints is mounted under `/oauth` so our routes look like this:
 
@@ -71,8 +59,7 @@ This way, you can make changes to your application without messing up with the A
 
 You can find all controllers under `/app/controllers/api/v1` folder.
 
-The `api_controller.rb` works as a parent class to the other controllers. It only defines a method that returns
-the current resource owner, based on the access token:
+The `api_controller.rb` works as a parent class to the other controllers. It only defines a method that returns the current resource owner, based on the access token:
 
 ``` ruby
 def current_resource_owner
