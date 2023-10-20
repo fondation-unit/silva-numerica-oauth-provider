@@ -307,5 +307,5 @@ Doorkeeper.configure do
 
   # WWW-Authenticate Realm (default "Doorkeeper").
   #
-  # realm "Doorkeeper"
+  realm "Silva Numerica"
 end
