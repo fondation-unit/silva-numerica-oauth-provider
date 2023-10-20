@@ -9,7 +9,6 @@
     <% if current_user %>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><%= link_to 'My Profile', edit_user_registration_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'My Projects', projects_path, class: 'nav-link' %></li>
         <% if policy([:doorkeeper, :application]).index? %>
           <li class="nav-item">
             <%= link_to 'My OAuth Applications', oauth_applications_path, class: 'nav-link' %>
@@ -22,7 +21,7 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %></li>
         <li class="nav-item"><%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %></li>
-    </ul>
+      </ul>
     <% end %>
   </div>
 </header>
