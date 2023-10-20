@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <% if current_user %>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><%= link_to 'My Profile', edit_user_registration_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Profil', edit_user_registration_path, class: 'nav-link' %></li>
           <% if policy([:doorkeeper, :application]).index? %>
             <li class="nav-item">
-              <%= link_to 'My OAuth Applications', oauth_applications_path, class: 'nav-link' %>
+              <%= link_to 'Applications OAuth', oauth_applications_path, class: 'nav-link' %>
             </li>
           <% end %>
-          <li class="nav-item"><%= link_to 'Authorized Applications', oauth_authorized_applications_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Applications autorisées', oauth_authorized_applications_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: 'btn btn-secondary'%></li>
         </ul>
       <% else %>
