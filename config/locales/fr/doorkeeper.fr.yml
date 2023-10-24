@@ -96,3 +96,6 @@ fr:
           home: "Accueil"
       application:
         title: "Autorisation OAuth requise"
+
+    scopes:
+      read: "Lire vos informations"
