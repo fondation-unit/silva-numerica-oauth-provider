@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Doorkeeper::ApplicationPolicy < ApplicationPolicy
   def index?
     user.admin?

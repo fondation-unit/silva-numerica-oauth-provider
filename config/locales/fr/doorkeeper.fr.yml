@@ -26,7 +26,7 @@ fr:
         title: "Une erreur est survenue"
       new:
         title: "Autorisation requise"
-        prompt: "Autoriser %{client_name} à utiliser vore compte ?"
+        prompt: "Autoriser %{client_name} à utiliser votre compte ?"
         able_to: "Cette application sera capable de"
       show:
         title: "Code d'autorisation"
@@ -96,3 +96,6 @@ fr:
           home: "Accueil"
       application:
         title: "Autorisation OAuth requise"
+
+    scopes:
+      read: "Lire vos informations"
