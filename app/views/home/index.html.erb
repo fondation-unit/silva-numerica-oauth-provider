@@ -2,7 +2,11 @@
   <div class="col">
     <% if user_signed_in? %>
       <% @applications.each do |application| %>
-        <%= application.name %>
+        <div class="card">
+          <div class="card-body">
+            <%= application.name %>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>

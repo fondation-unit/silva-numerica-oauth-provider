@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    @applications = Doorkeeper::Application.all if current_user
+    @applications = current_user.oauth_applications.ordered_by(:created_at) if current_user
   end
 end
