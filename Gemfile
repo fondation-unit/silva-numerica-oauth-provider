@@ -40,3 +40,4 @@ gem "dotenv-rails", require: "dotenv/rails-now", groups: [:development, :test]
 gem "jsbundling-rails", "~> 1.2.1"
 gem "cssbundling-rails", "~> 1.3"
 gem "turbo-rails"
+gem "pundit", "~> 2.3"

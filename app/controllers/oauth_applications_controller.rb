@@ -6,21 +6,21 @@ class OauthApplicationsController < ApplicationController
 
   def index
     @applications = current_user.oauth_applications.ordered_by(:created_at)
-    #authorize [:doorkeeper, :application], :index?
+    authorize [:doorkeeper, :application], :index?
   end
 
   def show
-    #authorize @application
+    authorize @application
   end
 
   def new
     @application = current_user.oauth_applications.new
-    #authorize @application
+    authorize @application
   end
 
   def create
     @application = current_user.oauth_applications.new(application_params)
-    #authorize @application
+    authorize @application
 
     if @application.save
       flash[:notice] = I18n.t(:notice, scope: %i[doorkeeper flash applications create])
@@ -31,7 +31,7 @@ class OauthApplicationsController < ApplicationController
   end
 
   def edit
-    #authorize @application
+    authorize @application
   end
 
   def update
