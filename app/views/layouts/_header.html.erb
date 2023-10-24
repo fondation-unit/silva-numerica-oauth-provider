@@ -16,7 +16,9 @@
             </li>
           <% end %>
           <li class="nav-item"><%= link_to 'Applications autorisées', oauth_authorized_applications_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { no_turbolink: true }, class: 'btn btn-secondary'%></li>
+          <li class="nav-item">
+            <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-secondary' %>
+          </li>
         </ul>
       <% else %>
         <ul class="navbar-nav">
