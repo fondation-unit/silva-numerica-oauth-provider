@@ -17,11 +17,10 @@ fr:
             scopes:
               not_match_configured: "ne correspond pas à la configuration sur le serveur."
 
-  applications:
-    buttons:
-      destroy: "Supprimer"
-
   doorkeeper:
+    applications:
+      buttons:
+        destroy: "Supprimer"
     authorizations:
       buttons:
         authorize: "Autoriser"
