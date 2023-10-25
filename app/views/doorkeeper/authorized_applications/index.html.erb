@@ -30,7 +30,7 @@
             <p class="card-text">
               <%= t('doorkeeper.authorized_applications.index.created_at') %>
               <%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %>
-              <%= link_to t(:visit).capitalize, URI.parse(application.redirect_uri).host %>
+              <%= link_to t(:visit).capitalize, "https://#{URI.parse(application.redirect_uri).host}" %>
             </p>
           </div>
         </div>
