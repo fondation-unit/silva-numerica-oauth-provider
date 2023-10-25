@@ -67,5 +67,5 @@ Rails.application.configure do
 
   config.web_console.allowed_ips = '127.0.0.1'
 
-  config.site_name = "Silva Numerica Authentification"
+  config.site_name = "Silva Numerica"
 end

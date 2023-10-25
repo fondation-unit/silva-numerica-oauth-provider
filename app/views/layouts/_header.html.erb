@@ -1,6 +1,12 @@
 <header class="d-flex navbar navbar-expand-lg sticky-top border-bottom">
   <nav class="container bd-gutter flex-wrap flex-lg-nowrap">
-    <a class="navbar-brand mb-0 h1" href="/"><%= Rails.application.config.site_name %></a>
+    <a class="navbar-brand mb-0 h1" href="/">
+      <% if File.file? "#{Rails.root.join("app", "assets", "images")}/logo.png" %>
+        <%= image_tag "logo.png", width: "40", class: "me-2 me-lg-3" %><%= Rails.application.config.site_name %>
+      <% else %>
+        <%= Rails.application.config.site_name %>
+      <% end %>
+    </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

@@ -83,5 +83,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.site_name = "Silva Numerica Authentification"
+  config.site_name = "Silva Numerica"
 end
