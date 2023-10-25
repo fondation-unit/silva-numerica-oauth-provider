@@ -1,4 +1,21 @@
 fr:
+  back: "retour"
+  cancel_my_account: "supprimer mon compte"
+  change_password: "modifier le mot de passe"
+  characters_minimum: "caractères minimum"
+  current_password: "mot de passe actuel"
+  current_password_needed: "votre mot de passe est nécessaire pour confirmer les changements"
+  currently_waiting_for_confirmation: "en attente de confirmation"
+  edit_user: "modifier mon profil"
+  firstname: "prénom"
+  lastname: "nom"
+  leave_blank_if_you_dont_want_to_change_it: "laisser le champ vide si vous ne voulez pas le changer"
+  password: "mot de passe"
+  password_confirmation: "confirmation de mot de passe"
+  profile: "profil"
+  update: "mettre à jour"
+  sign_out: "déconnexion"
+
   oauth_applications:
     confirmations:
       destroy: "Are you sure?"

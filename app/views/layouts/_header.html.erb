@@ -16,7 +16,7 @@
       <% if current_user %>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <%= link_to 'Profil', edit_user_registration_path, class: 'nav-link' %>
+            <%= link_to t(:profile).capitalize, profile_path, class: 'nav-link' %>
           </li>
           <% if defined?(current_user) && current_user.admin? %>
             <li class="nav-item">
@@ -27,7 +27,7 @@
             <%= link_to 'Applications autorisées', oauth_authorized_applications_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-secondary' %>
+            <%= button_to t(:sign_out).capitalize, destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary' %>
           </li>
         </ul>
       <% else %>
