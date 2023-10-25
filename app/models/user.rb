@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   include Roleable
+  require "lib/string"
 
   USER_NAME_REGEX = /[^a-zéèàùïöüâêîôû\s-]/i
 
