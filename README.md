@@ -123,6 +123,12 @@ You can manage all client applications in `/oauth/applications`.
 
 ## Usage with Moodle
 
+### In the provider
+
+Configure a new application in the administration with the Moodle callback URL : `/admin/oauth2callback.php`
+
+### In Moodle
+
 1. Enable the OAuth authentication plugin
 2. Under `Server > Services OAuth 2` declare a new Custom service
 3. Fill in the settings :
