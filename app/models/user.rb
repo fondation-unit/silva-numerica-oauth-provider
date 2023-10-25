@@ -3,6 +3,8 @@
 class User < ApplicationRecord
   include Roleable
 
+  USER_NAME_REGEX = /[^a-zéèàùïöüâêîôû\s-]/i
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
