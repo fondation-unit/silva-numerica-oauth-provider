@@ -1,6 +1,6 @@
 <div class="row">
   <% flash.each do |key, message| %>
-    <% if message.empty? %>
+    <% if message.empty? && message.present? %>
       <div class="col">
         <div class="alert alert-primary alert-dismissible fade show" role="alert">
           <%= message %>

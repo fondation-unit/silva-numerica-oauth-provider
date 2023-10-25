@@ -15,6 +15,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "home#index"
+  root to: "doorkeeper/authorized_applications#index"
   get "profile", to: "users#profile", as: :profile
 end

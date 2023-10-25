@@ -37,9 +37,9 @@ fr:
       buttons:
         revoke: "Révoquer"
       index:
-        title: "Vos applications autorisées"
+        title: "Vos applications"
         application: "Application"
-        created_at: "Créé le"
+        created_at: "Date d'accès"
         date_format: "%d-%m-%Y %H:%M:%S"
 
     pre_authorization:
