@@ -26,11 +26,11 @@
       <div class="col">
         <div class="card">
           <div class="card-body px-4 py-5">
-            <h5 class="card-title"><%= application.name %></h5>
-            <p class="card-text">
+            <h4 class="card-title"><%= application.name %></h4>
+            <p class="card-text mt-4">
               <%= t('doorkeeper.authorized_applications.index.created_at') %>
               <%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %>
-              <p>
+              <p class="mb-0">
                 <%= link_to t(:visit).capitalize, "https://#{URI.parse(application.redirect_uri).host}", class: "btn btn-outline-secondary" %>
               </p>
             </p>
