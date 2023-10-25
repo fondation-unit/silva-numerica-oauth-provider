@@ -44,7 +44,7 @@
         <strong><%= t(:created_at).capitalize %></strong>
       </div>
       <div class="col col-md-10">
-        <%= current_user.created_at.strftime("%d/%m/%Y - %H:%m") %>
+        <%= current_user.created_at.date_readable %>
       </div>
     </div>
   </div>
