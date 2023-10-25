@@ -9,15 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body>
-    <header class="d-flex navbar navbar-expand-lg sticky-top navbar-light bg-light">
-      <nav class="container bd-gutter flex-wrap flex-lg-nowrap">
-        <a class="navbar-brand mb-0 h1" href="/"><%= Rails.application.config.site_name %></a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
-    </header>
+    <%= render "layouts/header" %>
 
     <div class="container-fluid">
       <div class="container py-md-3">
