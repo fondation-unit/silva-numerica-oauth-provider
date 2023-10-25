@@ -15,6 +15,7 @@ fr:
   password_confirmation: "confirmation de mot de passe"
   profile: "profil"
   update: "mettre à jour"
+  visit: "accéder"
   sign_out: "déconnexion"
 
   oauth_applications:
