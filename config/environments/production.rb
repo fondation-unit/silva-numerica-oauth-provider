@@ -85,6 +85,9 @@ Rails.application.configure do
 
   config.site_name = "Silva Numerica"
 
+  Rails.application.routes.default_url_options[:host] = Rails.application.credentials.dig(:production, :hostname) || "http://localhost"
+  Rails.application.routes.default_url_options[:port] = Rails.application.credentials.dig(:production, :hostport) || nil
+
   config.action_mailer.delivery_method = :sendmail
   # Defaults to:
   # config.action_mailer.sendmail_settings = {
