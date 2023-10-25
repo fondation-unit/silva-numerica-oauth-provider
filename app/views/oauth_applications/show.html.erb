@@ -1,20 +1,20 @@
 <div class="row">
   <div class="col">
-    <h2><%= t('.title', name: @application.name) %></h2>
+    <h2 class="mb-4"><%= t('.title', name: @application.name) %></h2>
 
-    <h5><%= t('.application_id') %>:</h5>
+    <h5><%= t('doorkeeper.applications.attributes.application_id') %>:</h5>
     <p><code><%= @application.uid %></code></p>
 
-    <h5><%= t('.secret') %>:</h5>
+    <h5><%= t('doorkeeper.applications.attributes.secret') %>:</h5>
     <p><code><%= @application.secret %></code></p>
 
-    <h5><%= t('.scopes') %>:</h5>
+    <h5><%= t('doorkeeper.applications.attributes.scopes') %>:</h5>
     <p><code><%= @application.scopes %></code></p>
 
-    <h5><%= t('.confidential') %>:</h5>
+    <h5><%= t('doorkeeper.applications.attributes.confidential') %>:</h5>
     <p><code><%= @application.confidential %></code></p>
 
-    <h5><%= t('.callback_urls') %>:</h5>
+    <h5><%= t('doorkeeper.applications.attributes.callback_urls') %>:</h5>
 
     <table class="table table-striped">
       <tbody>

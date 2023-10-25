@@ -19,7 +19,15 @@ fr:
 
   doorkeeper:
     applications:
+      attributes:
+        application_id: "ID application"
+        callback_urls: "URL de callback"
+        confidential: "Confidentiel"
+        scopes: "Scopes"
+        secret: "Secret"
       buttons:
+        authorize: "Autoriser"
+        edit: "Éditer"
         destroy: "Supprimer"
         submit: "Envoyer"
     authorizations:
