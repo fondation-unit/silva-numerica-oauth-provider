@@ -6,7 +6,7 @@
   <% if @applications.empty? %>
     <div class="col">
       <div class="card" aria-hidden="true">
-        <div class="card-body">
+        <div class="card-body px-4 py-5">
           <h5 class="card-title placeholder-glow">
             <span class="placeholder col-6"></span>
           </h5>
@@ -25,11 +25,12 @@
     <% @applications.each do |application| %>
       <div class="col">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body px-4 py-5">
             <h5 class="card-title"><%= application.name %></h5>
             <p class="card-text">
               <%= t('doorkeeper.authorized_applications.index.created_at') %>
               <%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %>
+              <%= link_to t(:visit).capitalize, application.inspect %>
             </p>
           </div>
         </div>
