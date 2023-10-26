@@ -1,17 +1,17 @@
-<div class="row">
-  <div class="col">
-    <h2>Forgot your password?</h2>
+<div class="d-flex justify-content-center">
+  <div class="col col-lg-6">
+    <h2 class="mb-4"><%= t(:password_forgotten).capitalize %></h2>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+      <div class="form-group mt-4">
+        <%= f.label :email, class: "form-label" %>
+        <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
       </div>
 
-      <p>
-        <%= f.submit "Send me reset password instructions", class: 'btn btn-primary' %>
+      <p class="mt-4">
+        <%= f.submit t(:send_reset_password_instructions).capitalize, class: "btn btn-primary text-white" %>
       </p>
     <% end %>
 

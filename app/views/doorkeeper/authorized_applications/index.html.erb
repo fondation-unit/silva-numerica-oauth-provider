@@ -1,24 +1,43 @@
 <header class="page-header">
-  <h1><%= t('doorkeeper.authorized_applications.index.title') %></h1>
+  <h2><%= t('doorkeeper.authorized_applications.index.title') %></h2>
 </header>
 
-<main role="main">
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th><%= t('doorkeeper.authorized_applications.index.application') %></th>
-      <th><%= t('doorkeeper.authorized_applications.index.created_at') %></th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+  <% if @applications.empty? %>
+    <div class="col">
+      <div class="card" aria-hidden="true">
+        <div class="card-body p-4">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder col-8"></span>
+          </p>
+          <a class="btn btn-dark disabled placeholder col-6" aria-disabled="true"></a>
+        </div>
+      </div>
+    </div>
+  <% else %>
     <% @applications.each do |application| %>
-      <tr>
-        <td><%= application.name %></td>
-        <td><%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %></td>
-        <td><%= render 'delete_form', application: application %></td>
-      </tr>
+      <div class="col">
+        <div class="card">
+          <div class="card-body p-4">
+            <h4 class="card-title"><%= application.name %></h4>
+            <p class="card-text mt-4">
+              <%= t('doorkeeper.authorized_applications.index.created_at') %>
+              <%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %>
+              <p class="mb-0">
+                <%= link_to t(:visit).capitalize, "https://#{URI.parse(application.redirect_uri).host}", class: "btn btn-outline-secondary" %>
+              </p>
+            </p>
+          </div>
+        </div>
+      </div>
     <% end %>
-    </tbody>
-  </table>
-</main>
+  <% end %>
+</div>
+

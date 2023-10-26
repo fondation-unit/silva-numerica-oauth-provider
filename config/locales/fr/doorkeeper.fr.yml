@@ -18,6 +18,18 @@ fr:
               not_match_configured: "ne correspond pas à la configuration sur le serveur."
 
   doorkeeper:
+    applications:
+      attributes:
+        application_id: "ID application"
+        callback_urls: "URL de callback"
+        confidential: "Confidentiel"
+        scopes: "Scopes"
+        secret: "Secret"
+      buttons:
+        authorize: "Autoriser"
+        edit: "Éditer"
+        destroy: "Supprimer"
+        submit: "Envoyer"
     authorizations:
       buttons:
         authorize: "Autoriser"
@@ -37,9 +49,9 @@ fr:
       buttons:
         revoke: "Révoquer"
       index:
-        title: "Vos applications autorisées"
+        title: "Vos applications"
         application: "Application"
-        created_at: "Créé le"
+        created_at: "Date d'accès"
         date_format: "%d-%m-%Y %H:%M:%S"
 
     pre_authorization:

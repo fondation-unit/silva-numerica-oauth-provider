@@ -1,17 +1,17 @@
-<div class="row">
-  <div class="col">
-    <h2>Resend confirmation instructions</h2>
+<div class="d-flex justify-content-center">
+  <div class="col col-lg-6">
+    <h2 class="mb-4"><%= t(:resend_confirmation_instructions).capitalize %></h2>
 
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      <div class="form-group mt-4">
+        <%= f.label :email, "form-label" %>
+        <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
       </div>
 
-      <p>
-        <%= f.submit "Resend confirmation instructions", class: 'btn btn-primary' %>
+      <p class="mt-4">
+        <%= f.submit t(:resend_confirmation_instructions).capitalize, class: "btn btn-primary text-white" %>
       </p>
     <% end %>
 

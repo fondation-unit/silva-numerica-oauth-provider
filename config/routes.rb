@@ -2,18 +2,19 @@
 
 Rails.application.routes.draw do
   use_doorkeeper do
-    controllers applications: 'oauth_applications'
+    controllers applications: "oauth_applications"
   end
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: "users/sessions"
   }
 
   namespace :api do
     namespace :v1 do
-      get '/me' => 'credentials#me'
+      get "/me" => "credentials#me"
     end
   end
 
-  root to: 'home#index'
+  root to: "doorkeeper/authorized_applications#index"
+  get "profile", to: "users#profile", as: :profile
 end

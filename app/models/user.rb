@@ -2,6 +2,10 @@
 
 class User < ApplicationRecord
   include Roleable
+  require "string"
+  require "time_with_zone"
+
+  USER_NAME_REGEX = /[^a-zéèàùïöüâêîôû\s-]/i
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -27,4 +31,13 @@ class User < ApplicationRecord
            as: :owner
 
   has_many :projects, dependent: :delete_all
+
+  before_validation :cleanup_username
+
+  private
+
+    def cleanup_username
+      self.firstname = firstname.gsub(USER_NAME_REGEX, "").to_s.patronize
+      self.lastname = lastname.gsub(USER_NAME_REGEX, "").to_s.patronize
+    end
 end
