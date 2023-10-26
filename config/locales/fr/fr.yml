@@ -28,6 +28,14 @@ fr:
   sign_out: "déconnexion"
   sign_up: "s'enregistrer"
 
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: "email déjà utilisé"
+
   oauth_applications:
     confirmations:
       destroy: "Are you sure?"
