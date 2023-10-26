@@ -6,21 +6,21 @@
       <%= render "users/shared/error_messages", resource: resource %>
       <%= f.hidden_field :reset_password_token %>
 
-      <div class="form-group">
-        <%= f.label :password, "New password" %>
-        <%= f.password_field :password, class: 'form-control', autofocus: true, autocomplete: "new-password" %>
+      <div class="form-group mt-4">
+        <%= f.label t(:new_password).capitalize, class: "form-label" %>
+        <%= f.password_field :password, class: "form-control", autofocus: true, autocomplete: "new-password" %>
         <% if @minimum_password_length %>
           <small class="form-text text-muted">(<%= @minimum_password_length %> characters minimum)</small>
         <% end %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation, "Confirm new password" %>
-        <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off" %>
+      <div class="form-group mt-4">
+        <%= f.label t(:new_password_confirmation).capitalize, class: "form-label" %>
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
       </div>
 
-      <p>
-        <%= f.submit "Change my password", class: 'btn btn-primary' %>
+      <p class="mt-4">
+        <%= f.submit "Change my password", class: "btn btn-primary text-white" %>
       </p>
     <% end %>
 
