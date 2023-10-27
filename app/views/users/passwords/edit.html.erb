@@ -1,3 +1,8 @@
+<%= content_for :contextual_nav do %>
+  <li class="nav-item"><%= link_to t(:sign_in).capitalize, new_user_session_path, class: 'nav-link' %></li>
+  <li class="nav-item"><%= link_to t(:sign_up).capitalize, new_user_registration_path, class: 'nav-link' %></li>
+<% end %>
+
 <div class="d-flex justify-content-center">
   <div class="col col-lg-6">
     <h2 class="mb-4"><%= t(:change_password).capitalize %></h2>
