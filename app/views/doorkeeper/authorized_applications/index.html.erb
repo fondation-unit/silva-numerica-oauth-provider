@@ -17,7 +17,7 @@
             <span class="placeholder col-6"></span>
             <span class="placeholder col-8"></span>
           </p>
-          <a class="btn btn-dark disabled placeholder col-6" aria-disabled="true"></a>
+          <a class="btn btn-dark text-uppercase disabled placeholder col-6" aria-disabled="true"></a>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
               <%= t('doorkeeper.authorized_applications.index.created_at') %>
               <%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %>
               <p class="mb-0">
-                <%= link_to t(:visit).capitalize, "https://#{URI.parse(application.redirect_uri).host}", class: "btn btn-outline-secondary" %>
+                <%= link_to t(:visit).capitalize, "https://#{URI.parse(application.redirect_uri).host}", class: "btn btn-outline-secondary text-uppercase" %>
               </p>
             </p>
           </div>

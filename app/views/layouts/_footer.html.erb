@@ -1,0 +1,14 @@
+<footer class="container-fluid mt-auto">
+  <div class="container">
+    <% if File.file? "#{Rails.root.join("app", "assets", "images")}/logo.png" %>
+      <%= image_tag "logo.png", width: "20", class: "me-2" %><%= Rails.application.config.site_name %>
+      &copy;<%= Time.zone.now.year %> 
+    <% else %>
+      <%= Rails.application.config.site_name %>
+      &copy;<%= Time.zone.now.year %>
+    <% end %>
+    <p>
+      <a href="https://silvanumerica.net/" target="_blank" alt="Site web <%= Rails.application.config.site_name %>">www.silvanumerica.net</a>
+    </p>
+  </div>
+</footer>

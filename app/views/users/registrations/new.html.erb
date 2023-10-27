@@ -1,3 +1,7 @@
+<%= content_for :contextual_nav do %>
+  <li class="nav-item"><%= link_to t(:sign_in).capitalize, new_user_session_path, class: 'nav-link' %></li>
+<% end %>
+
 <div class="d-flex justify-content-center">
   <div class="col col-lg-6">
     <h2 class="mb-4"><%= t(:sign_up).capitalize %></h2>
@@ -11,20 +15,20 @@
       </div>
 
       <div class="form-group mt-4">
-        <%= f.label :password, class: "form-label" %>
+        <%= f.label t(:password).capitalize, class: "form-label" %>
         <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
         <% if @minimum_password_length %>
-          <small class="form-text text-muted">(<%= @minimum_password_length %> characters minimum</small>
+          <small class="form-text text-muted">(<%= @minimum_password_length %> <%= t(:characters_minimum) %>)</small>
         <% end %>
       </div>
 
       <div class="form-group my-4">
-        <%= f.label :password_confirmation, class: "form-label" %>
+        <%= f.label t(:password_confirmation).capitalize, class: "form-label" %>
         <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
       </div>
 
       <p class="mt-4">
-        <%= f.submit t(:sign_up).capitalize, class: "btn btn-primary text-white" %>
+        <%= f.submit t(:sign_up).capitalize, class: "btn btn-primary text-white text-uppercase" %>
       </p>
     <% end %>
 
