@@ -1,9 +1,18 @@
 // Config file
-@font-face
-  font-family: "SourceSerif4"
-  src: url("SourceSerif4_18pt-Regular.ttf") format("truetype")
+@mixin fontFace($name, $file, $format:"truetype")
+  @font-face
+    font-family: $name
+    src: url($file) format($format)
+
++fontFace("SourceSerif4", "SourceSerif4_18pt-Regular.ttf")
++fontFace("NunitoSans-Light", "NunitoSans_10pt-Light.ttf")
++fontFace("NunitoSans-SemiBold", "NunitoSans_10pt-SemiBold.ttf")
++fontFace("NunitoSans-Bold", "NunitoSans_10pt-Bold.ttf")
 
 $serif-font: "SourceSerif4"
+$text-font: "NunitoSans-Light"
+$semibold-font: "NunitoSans-SemiBold"
+$bold-font: "NunitoSans-Bold"
 
 $main-color: #f25d27
 $secondary-color: #592b20

@@ -1,0 +1,16 @@
+<% if current_user %>
+  <li class="nav-item">
+    <%= link_to t(:profile).capitalize, profile_path, class: "nav-link" %>
+  </li>
+  <% if defined?(current_user) && current_user.admin? %>
+    <li class="nav-item">
+      <%= link_to "Applications OAuth", oauth_applications_path, class: "nav-link" %>
+    </li>
+  <% end %>
+  <li class="nav-item">
+    <%= link_to "Applications autorisées", oauth_authorized_applications_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= button_to t(:sign_out).capitalize, destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary text-uppercase" %>
+  </li>
+<% end %>

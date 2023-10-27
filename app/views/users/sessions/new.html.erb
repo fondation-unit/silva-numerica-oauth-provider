@@ -1,3 +1,7 @@
+<%= content_for :contextual_nav do %>
+  <li class="nav-item"><%= link_to t(:sign_up).capitalize, new_user_registration_path, class: 'nav-link' %></li>
+<% end %>
+
 <div class="d-flex justify-content-center">
   <div class="col col-lg-6">
     <h2 class="mb-4"><%= t(:login).capitalize %></h2>
@@ -22,7 +26,7 @@
         </div>
       <% end %>
 
-      <p class="mt-4"><%= f.submit t(:login).capitalize, class: "btn btn-primary text-white" %></p>
+      <p class="mt-4"><%= f.submit t(:login).capitalize, class: "btn btn-primary text-white text-uppercase" %></p>
     <% end %>
 
     <%= render "users/shared/links" %>
