@@ -21,15 +21,22 @@ fr:
     applications:
       attributes:
         application_id: "ID application"
+        redirect_uri: "URL de redirection"
         callback_urls: "URL de callback"
         confidential: "Confidentiel"
         scopes: "Scopes"
         secret: "Secret"
+        superapp: "Super application"
       buttons:
         authorize: "Autoriser"
         edit: "Éditer"
         destroy: "Supprimer"
         submit: "Envoyer"
+      help:
+        redirect_uri: "Utiliser une ligne par URI"
+        confidential: "L'application pourra garder confidentiel le secret du client. Les applications mobiles natives et les Single Page Applications sont considérées comme non confidentielles."
+        scopes: "Séparez les champs d'application par des espaces. Laisser vide pour utiliser les champs d'application par défaut."
+        superapp: "Application de confiance"
     authorizations:
       buttons:
         authorize: "Autoriser"
