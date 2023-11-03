@@ -1,10 +1,7 @@
 <div class="container col col-md-6 py-md-3">
   <div class="card">
-    <header class="card-header px-4">
-      <h2><%= t('.title') %></h2>
-    </header>
-
     <main class="card-body px-4 py-5">
+      <h2 class="mb-5"><%= t('.title') %></h2>
       <p class="h4">
         <%= raw t('.prompt', client_name: content_tag(:strong, class: 'text-info') { @pre_auth.client.name }) %>
       </p>
@@ -13,7 +10,7 @@
         <div id="oauth-permissions">
           <p><%= t('.able_to') %>:</p>
 
-          <ul class="text-info">
+          <ul class="text-primary">
             <% @pre_auth.scopes.each do |scope| %>
               <li><%= t scope, scope: [:doorkeeper, :scopes] %></li>
             <% end %>
@@ -21,7 +18,7 @@
         </div>
       <% end %>
 
-      <div class="d-flex">
+      <div class="d-flex mt-4">
         <%= form_tag oauth_authorization_path, method: :post, class: "pe-3" do %>
           <%= hidden_field_tag :client_id, @pre_auth.client.uid %>
           <%= hidden_field_tag :redirect_uri, @pre_auth.redirect_uri %>
