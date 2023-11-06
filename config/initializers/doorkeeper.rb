@@ -2,6 +2,8 @@ Doorkeeper.configure do
   # Change the ORM that doorkeeper will use (needs plugins)
   orm :active_record
 
+  application_class "CustomApplication"
+
   # This block will be called to check whether the resource owner is authenticated or not.
   resource_owner_authenticator do
     current_user || warden.authenticate!(scope: :user)
@@ -302,7 +304,7 @@ Doorkeeper.configure do
   # For example if dealing with a trusted application.
   #
   skip_authorization do |resource_owner, client|
-    client.superapp? or resource_owner.admin?
+    client.application&.superapp? or resource_owner.admin?
   end
 
   # WWW-Authenticate Realm (default "Doorkeeper").
