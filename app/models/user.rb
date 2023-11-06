@@ -27,7 +27,7 @@ class User < ApplicationRecord
            dependent: :delete_all # or :destroy if you need callbacks
 
   has_many :oauth_applications,
-           class_name: "Doorkeeper::Application",
+           class_name: "Application",
            as: :owner
 
   before_validation :cleanup_username
