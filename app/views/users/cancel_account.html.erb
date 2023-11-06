@@ -1,0 +1,31 @@
+<div class="alert alert-danger">
+  <strong><%= t(:cancel_my_account_descrciption) %></strong>
+</div>
+
+<div class="form-group mt-5 mb-4">
+  <input type="checkbox" id="confirm_cancel" name="confirm" required />
+  <label class="form-check-label ps-2">
+    <%= t(:i_confirm).capitalize %>
+  </label>
+</div>
+
+<div class="form-group my-3">
+  <%= button_to t(:cancel_my_account).capitalize, registration_path(current_user), class: "btn btn-outline-danger text-uppercase", method: :delete, disabled: true %>
+</div>
+
+<script type="text/javascript">
+  const confirmCheckbox = document.querySelector('#confirm_cancel');
+  const cancelButton = document.querySelector('.btn');
+
+  confirmCheckbox.checked = false;
+  cancelButton.disabled = true;
+
+  confirmCheckbox.addEventListener('change', () => {
+    console.log(confirmCheckbox.checked)
+    if (confirmCheckbox.checked == true) {
+      cancelButton.disabled = false;
+    } else {
+      cancelButton.disabled = true;
+    }
+  });
+</script>
