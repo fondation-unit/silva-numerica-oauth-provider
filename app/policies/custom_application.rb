@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Doorkeeper::ApplicationPolicy < ApplicationPolicy
+class CustomApplication < ApplicationPolicy
   def index?
     user.admin?
   end
