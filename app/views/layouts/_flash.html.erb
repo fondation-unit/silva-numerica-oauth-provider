@@ -1,13 +1,12 @@
-<div class="row">
+<div class="d-flex justify-content-center">
   <% flash.each do |key, message| %>
-    <% if message.empty? && message.present? %>
-      <div class="col">
-        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-          <%= message %>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">
-              <i class="bi bi-remove"></i>
-            </span>
+    <% if message.present? %>
+      <div class="col col-lg-5">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <span><%= message %></span>
+
+          <button type="button" class="btn btn-close py-3" data-bs-dismiss="alert" aria-label="Close">
+            <i class="bi bi-remove"></i>X
           </button>
         </div>
       </div>

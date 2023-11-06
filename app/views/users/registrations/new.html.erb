@@ -10,21 +10,31 @@
       <%= render "users/shared/error_messages", resource: resource %>
 
       <div class="form-group mt-4">
-        <%= f.label :email, class: "form-label" %>
-        <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+        <%= f.label t(:firstname), class: "form-label" %>
+        <%= f.text_field :firstname, class: "form-control", autocomplete: "firstname", required: true %>
       </div>
 
-      <div class="form-group mt-4">
+      <div class="form-group mt-3">
+        <%= f.label t(:lastname), class: "form-label" %>
+        <%= f.text_field :lastname, class: "form-control", autocomplete: "lastname", required: true %>
+      </div>
+
+      <div class="form-group mt-3">
+        <%= f.label :email, class: "form-label" %>
+        <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", required: true %>
+      </div>
+
+      <div class="form-group mt-3">
         <%= f.label t(:password).capitalize, class: "form-label" %>
-        <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+        <%= f.password_field :password, class: "form-control", autocomplete: "new-password", required: true %>
         <% if @minimum_password_length %>
           <small class="form-text text-muted">(<%= @minimum_password_length %> <%= t(:characters_minimum) %>)</small>
         <% end %>
       </div>
 
-      <div class="form-group my-4">
+      <div class="form-group my-3">
         <%= f.label t(:password_confirmation).capitalize, class: "form-label" %>
-        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password", required: true %>
       </div>
 
       <p class="mt-4">

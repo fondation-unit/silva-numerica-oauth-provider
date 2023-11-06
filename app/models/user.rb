@@ -34,6 +34,9 @@ class User < ApplicationRecord
 
   before_validation :cleanup_username
 
+  validates :firstname, presence: true, length: {in: 2..30}
+  validates :lastname, presence: true, length: {in: 2..30}
+
   private
 
     def cleanup_username
