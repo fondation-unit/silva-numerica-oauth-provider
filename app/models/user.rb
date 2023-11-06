@@ -30,8 +30,6 @@ class User < ApplicationRecord
            class_name: "Doorkeeper::Application",
            as: :owner
 
-  has_many :projects, dependent: :delete_all
-
   before_validation :cleanup_username
 
   validates :firstname, presence: true, length: {in: 2..30}
