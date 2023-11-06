@@ -4,7 +4,7 @@
 <% end %>
 
 <div class="d-flex justify-content-center">
-  <div class="col col-lg-6">
+  <div class="col col-lg-5">
     <h2 class="mb-4"><%= t(:resend_confirmation_instructions).capitalize %></h2>
 
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>

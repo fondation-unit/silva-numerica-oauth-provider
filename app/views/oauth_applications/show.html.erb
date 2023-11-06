@@ -14,6 +14,9 @@
     <h5><%= t('doorkeeper.applications.attributes.confidential') %>:</h5>
     <p><code><%= @application.confidential %></code></p>
 
+    <h5><%= t('doorkeeper.applications.attributes.superapp') %>:</h5>
+    <p><code><%= @application.superapp? %></code></p>
+
     <h5><%= t('doorkeeper.applications.attributes.callback_urls') %>:</h5>
 
     <table class="table table-striped">
