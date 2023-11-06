@@ -21,7 +21,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    p "*" * 90
     super
   end
 
@@ -46,7 +45,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def configure_account_update_params
-      p "-" * 90
       devise_parameter_sanitizer.permit(:account_update, keys: [
         :firstname,
         :lastname,
