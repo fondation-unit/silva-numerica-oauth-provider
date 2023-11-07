@@ -17,10 +17,10 @@
         <tbody>
           <% @applications.each do |application| %>
             <tr id="application_<%= application.id %>">
-              <td class="align-middle"><%= link_to application.name, oauth_application_path(application) %></td>
+              <td class="align-middle"><%= link_to application.name, oauth_application_path(application), class: "link" %></td>
               <td class="align-middle"><%= application.redirect_uri %></td>
               <td class="align-middle" style="width: 70px">
-                <%= link_to t("doorkeeper.applications.buttons.edit"), edit_oauth_application_path(application), class: "btn btn-sm btn-outline-secondary text-uppercase" %>
+                <%= link_to t("doorkeeper.applications.buttons.edit"), edit_oauth_application_path(application), class: "btn btn-sm btn-outline-secondary text-uppercase text-white-hover" %>
               </td>
               <td class="align-middle" style="width: 70px"><%= render "delete_form", application: application %></td>
             </tr>
