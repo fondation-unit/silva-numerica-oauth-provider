@@ -265,7 +265,7 @@ Doorkeeper.configure do
   #   http://tools.ietf.org/html/rfc6819#section-4.4.2
   #   http://tools.ietf.org/html/rfc6819#section-4.4.3
   #
-  grant_flows %w[password authorization_code client_credentials]
+  grant_flows %w[password authorization_code client_credentials implicit_oidc]
 
   resource_owner_from_credentials do |routes|
     user = User.find_for_database_authentication(email: params[:username])
