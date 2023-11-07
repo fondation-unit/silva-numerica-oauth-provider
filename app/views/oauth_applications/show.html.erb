@@ -2,22 +2,22 @@
   <div class="col">
     <h2 class="mb-4"><%= t('.title', name: @application.name) %></h2>
 
-    <h5><%= t('doorkeeper.applications.attributes.application_id') %>:</h5>
+    <h5><%= t('doorkeeper.applications.attributes.application_id') %> :</h5>
     <p><code><%= @application.uid %></code></p>
 
-    <h5><%= t('doorkeeper.applications.attributes.secret') %>:</h5>
+    <h5><%= t('doorkeeper.applications.attributes.secret') %> :</h5>
     <p><code><%= @application.secret %></code></p>
 
-    <h5><%= t('doorkeeper.applications.attributes.scopes') %>:</h5>
+    <h5><%= t('doorkeeper.applications.attributes.scopes') %> :</h5>
     <p><code><%= @application.scopes %></code></p>
 
-    <h5><%= t('doorkeeper.applications.attributes.confidential') %>:</h5>
-    <p><code><%= @application.confidential %></code></p>
+    <h5><%= t('doorkeeper.applications.attributes.confidential') %> :</h5>
+    <p><code><%= @application.confidential ? t(:true) : t(:false) %></code></p>
 
-    <h5><%= t('doorkeeper.applications.attributes.superapp') %>:</h5>
-    <p><code><%= @application.superapp? %></code></p>
+    <h5><%= t('doorkeeper.applications.attributes.superapp') %> :</h5>
+    <p><code><%= @application.superapp? ? t(:true) : t(:false) %></code></p>
 
-    <h5><%= t('doorkeeper.applications.attributes.callback_urls') %>:</h5>
+    <h5><%= t('doorkeeper.applications.attributes.callback_urls') %> :</h5>
 
     <table class="table table-striped">
       <tbody>
@@ -27,7 +27,7 @@
             <td class="align-middle" style="width: 70px">
               <%= link_to t('doorkeeper.applications.buttons.authorize'), 
                 oauth_authorization_path(client_id: @application.uid, redirect_uri: uri, response_type: 'code', scope: @application.scopes),
-                class: 'btn btn-sm btn-success text-uppercase', target: '_blank' %>
+                class: 'btn btn-sm btn-success text-uppercase border-radius-0', target: '_blank' %>
             </td>
           </tr>
         <% end %>
@@ -36,10 +36,10 @@
   </div>
 
   <div class="col-3">
-    <h2><%= t('.actions') %></h2>
+    <h2 class="mb-4"><%= t('.actions') %></h2>
 
     <p>
-      <%= link_to t('doorkeeper.applications.buttons.edit'), edit_oauth_application_path(@application), class: 'btn btn-sm btn-outline-primary text-uppercase' %>
+      <%= link_to t('doorkeeper.applications.buttons.edit'), edit_oauth_application_path(@application), class: 'btn btn-primary text-white text-uppercase' %>
       <%= render 'delete_form', application: @application %>
     </p>
   </div>
