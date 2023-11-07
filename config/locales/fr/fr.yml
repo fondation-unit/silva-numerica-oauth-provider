@@ -58,7 +58,7 @@ fr:
     edit:
       title: "Éditer l'application"
     index:
-      title: "Vos applications"
+      title: "Applications"
       new: "Nouvelle application"
       name: "Nom"
       callback_url: "URL de callback"
