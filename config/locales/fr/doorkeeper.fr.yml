@@ -29,6 +29,7 @@ fr:
         superapp: "Super application"
       buttons:
         authorize: "Autoriser"
+        cancel: "Annuler"
         edit: "Éditer"
         destroy: "Supprimer"
         submit: "Envoyer"

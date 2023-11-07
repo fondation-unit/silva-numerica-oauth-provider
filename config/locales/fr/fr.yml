@@ -15,6 +15,7 @@ fr:
   lastname: "nom"
   leave_blank_if_you_dont_want_to_change_it: "laisser le champ vide si vous ne voulez pas le changer"
   login: "connexion"
+  name: "nom"
   new_password: "nouveau mot de passe"
   new_password_confirmation: "confirmer le nouveau mot de passe"
   password: "mot de passe"
