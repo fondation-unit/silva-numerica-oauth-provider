@@ -40,39 +40,39 @@ fr:
 
   oauth_applications:
     confirmations:
-      destroy: "Are you sure?"
+      destroy: "Êtes-vous sûr ?"
     buttons:
-      edit: "Edit"
-      destroy: "Destroy"
-      submit: "Submit"
-      cancel: "Cancel"
-      authorize: "Authorize"
+      edit: "Éditer"
+      destroy: "Supprimer"
+      submit: "Envoyer"
+      cancel: "Annuler"
+      authorize: "Autoriser"
     form:
-      error: "Whoops! Check your form for possible errors"
+      error: "Whoops ! Vérifiez les erreurs dans le formulaire."
     help:
-      confidential: "Application will be used where the client secret can be kept confidential. Native mobile apps and Single Page Apps are considered non-confidential."
-      redirect_uri: "Use one line per URI"
-      native_redirect_uri: "Use %{native_redirect_uri} if you want to add localhost URIs for development purposes"
-      scopes: "Separate scopes with spaces. Leave blank to use the default scopes."
+      confidential: "L'application sera utilisée en gardant le secret du client confidentiel. Les applications mobiles natives et les applications SPA sont considérées comme non confidentielles."
+      redirect_uri: "Utilisez une ligne par URI"
+      native_redirect_uri: "Utilisez %{native_redirect_uri} si vous souhaitez ajouter des URIs localhost à des fins de développement"
+      scopes: "Séparez les scopes par des espaces. Laisser vide pour utiliser les scopes par défaut."
     edit:
-      title: "Edit application"
+      title: "Éditer l'application"
     index:
-      title: "Your applications"
-      new: "New Application"
-      name: "Name"
-      callback_url: "Callback URL"
-      confidential: "Confidential?"
+      title: "Vos applications"
+      new: "Nouvelle application"
+      name: "Nom"
+      callback_url: "URL de callback"
+      confidential: "Confidentiel ?"
       actions: "Actions"
       confidentiality:
-        "yes": "Yes"
-        "no": "No"
+        "yes": "Oui"
+        "no": "Non"
     new:
-      title: "New Application"
+      title: "Nouvelle application"
     show:
-      title: "Application: %{name}"
-      application_id: "Application UID"
+      title: "Application : %{name}"
+      application_id: "UID application"
       secret: "Secret"
       scopes: "Scopes"
-      confidential: "Confidential"
-      callback_urls: "Callback urls"
+      confidential: "Confidentiel"
+      callback_urls: "URL de callback"
       actions: "Actions"
