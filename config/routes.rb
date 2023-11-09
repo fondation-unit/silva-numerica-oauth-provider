@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     controllers applications: "oauth_applications"
   end
 
+  use_doorkeeper_device_authorization_grant
+
   devise_for :users, controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations",
