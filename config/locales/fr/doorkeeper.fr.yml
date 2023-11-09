@@ -110,6 +110,10 @@ fr:
       authorized_applications:
         destroy:
           notice: "Application révoquée."
+      device_codes:
+        authorize:
+          error: "Erreur d'autorisation du dispositif."
+          success: "Dispositif autorisé avec succès."
 
     layouts:
       admin:
