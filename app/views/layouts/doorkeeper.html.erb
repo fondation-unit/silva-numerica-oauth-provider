@@ -8,14 +8,18 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
-  <body>
-    <%= render "layouts/header" %>
+  <body class="d-flex flex-column vh-100">
+    <main class="flex-shrink-0">
+      <%= render "layouts/header_static" %>
 
-    <div class="container-fluid my-5">
-      <div class="container py-md-3">
-        <%= render "layouts/flash", flash: flash %>
-        <%= yield %>
+      <div class="container-fluid my-5">
+        <div class="container py-md-3">
+          <%= render "layouts/flash", flash: flash %>
+          <%= yield %>
+        </div>
       </div>
-    </div>
+    </main>
+
+    <%= render "layouts/footer_static" %>
   </body>
 </html>

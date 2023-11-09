@@ -65,6 +65,10 @@ fr:
     pre_authorization:
       status: "Pre-autorisation"
 
+    device:
+      authorize_device: "Autoriser le dispositif"
+      user_code: "Code utilisateur"
+
     errors:
       messages:
         # Common error messages

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_03_143626) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_09_143225) do
   create_table "oauth_access_grants", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "resource_owner_id", null: false
     t.bigint "application_id", null: false
@@ -59,6 +59,21 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_03_143626) do
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
+  create_table "oauth_device_grants", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "resource_owner_id"
+    t.bigint "application_id", null: false
+    t.string "device_code", null: false
+    t.string "user_code"
+    t.integer "expires_in", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "last_polling_at", precision: nil
+    t.string "scopes", default: "", null: false
+    t.index ["application_id"], name: "index_oauth_device_grants_on_application_id"
+    t.index ["device_code"], name: "index_oauth_device_grants_on_device_code", unique: true
+    t.index ["resource_owner_id"], name: "index_oauth_device_grants_on_resource_owner_id"
+    t.index ["user_code"], name: "index_oauth_device_grants_on_user_code", unique: true
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -92,4 +107,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_03_143626) do
   add_foreign_key "oauth_access_grants", "users", column: "resource_owner_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "users", column: "resource_owner_id"
+  add_foreign_key "oauth_device_grants", "oauth_applications", column: "application_id"
 end
