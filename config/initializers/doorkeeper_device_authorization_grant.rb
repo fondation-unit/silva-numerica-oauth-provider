@@ -2,10 +2,10 @@
 
 Doorkeeper::DeviceAuthorizationGrant.configure do
   # Minimum device code polling interval expected from the client, expressed in seconds.
-  # device_code_polling_interval 5
+  device_code_polling_interval 5
 
   # Device code expiration time, in seconds.
-  # device_code_expires_in 300
+  device_code_expires_in 300
 
   # Customizable reference to the DeviceGrant model.
   # device_grant_class 'Doorkeeper::DeviceAuthorizationGrant::DeviceGrant'
