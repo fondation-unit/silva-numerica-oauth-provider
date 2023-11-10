@@ -29,6 +29,7 @@ fr:
         superapp: "Super application"
       buttons:
         authorize: "Autoriser"
+        cancel: "Annuler"
         edit: "Éditer"
         destroy: "Supprimer"
         submit: "Envoyer"
@@ -63,6 +64,10 @@ fr:
 
     pre_authorization:
       status: "Pre-autorisation"
+
+    device:
+      authorize_device: "Autoriser le dispositif"
+      user_code: "Code utilisateur"
 
     errors:
       messages:
@@ -105,6 +110,11 @@ fr:
       authorized_applications:
         destroy:
           notice: "Application révoquée."
+      device_codes:
+        authorize:
+          error: "Erreur d'autorisation du dispositif."
+          success: "Dispositif autorisé avec succès."
+          can_close_page: "Vous pouvez à présent fermer cette page."
 
     layouts:
       admin:

@@ -1,0 +1,11 @@
+<header class="d-flex navbar navbar-expand-lg sticky-top">
+  <nav class="container bd-gutter flex-wrap flex-lg-nowrap">
+    <a class="navbar-brand mb-0 h1" href="#">
+      <% if File.file? "#{Rails.root.join("app", "assets", "images")}/logo.png" %>
+        <%= image_tag "logo.png", width: "40", class: "me-2 me-lg-3" %><%= Rails.application.config.site_name %>
+      <% else %>
+        <%= Rails.application.config.site_name %>
+      <% end %>
+    </a>
+  </nav>
+</header>

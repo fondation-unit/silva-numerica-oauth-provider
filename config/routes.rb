@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     controllers applications: "oauth_applications"
   end
 
+  use_doorkeeper_device_authorization_grant do
+    controller device_authorizations: "custom_device_authorizations"
+  end
+  get "/oauth/device/success", to: "custom_device_authorizations#success", as: :oauth_device_authorizations_success
+
   devise_for :users, controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations",
@@ -12,7 +17,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get "/me" => "credentials#me"
+      get "/me", to: "credentials#me"
     end
   end
 

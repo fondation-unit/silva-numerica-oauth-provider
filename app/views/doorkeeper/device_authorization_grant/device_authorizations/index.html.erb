@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center">
+  <div class="col col-lg-5">
+    <header class="page-header">
+      <h2 class="mb-5"><%= t("doorkeeper.device.authorize_device") %></h2>
+    </header>
+
+    <%= form_with(url: oauth_device_authorizations_authorize_url) do %>
+      <div class="form-group row">
+        <%= label_tag(:user_code, t("doorkeeper.device.user_code"), class: "col-sm-4 col-form-label font-weight-bold" ) %>
+          <div class="col-sm-8">
+            <%= text_field_tag(:user_code, params[:user_code], class: "form-control" ) %>
+          </div>
+      </div>
+
+      <div class="form-group row mt-5">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= submit_tag(t("doorkeeper.applications.buttons.authorize"), class: "btn btn-primary text-white text-uppercase" ) %>
+            <%= link_to t("doorkeeper.applications.buttons.cancel"), oauth_device_authorizations_index_path, class: "btn btn-secondary text-white text-uppercase" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

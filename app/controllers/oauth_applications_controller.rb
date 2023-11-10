@@ -5,7 +5,8 @@ class OauthApplicationsController < ApplicationController
   before_action :set_application, only: %i[show edit update destroy]
 
   def index
-    @applications = current_user.oauth_applications.ordered_by(:created_at)
+    # @applications = current_user.oauth_applications.ordered_by(:created_at)
+    @applications = CustomApplication.all.ordered_by(:created_at)
     authorize [:doorkeeper, :application], :index?
   end
 
@@ -52,12 +53,11 @@ class OauthApplicationsController < ApplicationController
   end
 
   private
-
     def set_application
       @application = current_user.oauth_applications.find(params[:id])
     end
 
     def application_params
-      params.require(:custom_application).permit(:name, :redirect_uri, :scopes, :confidential)
+      params.require(:custom_application).permit(:name, :redirect_uri, :scopes, :confidential, :superapp)
     end
 end

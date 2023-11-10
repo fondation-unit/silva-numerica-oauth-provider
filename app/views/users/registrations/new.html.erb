@@ -11,7 +11,7 @@
 
       <div class="form-group mt-4">
         <%= f.label t(:firstname), class: "form-label" %>
-        <%= f.text_field :firstname, class: "form-control", autocomplete: "firstname", required: true %>
+        <%= f.text_field :firstname, class: "form-control", autofocus: true, autocomplete: "firstname", required: true %>
       </div>
 
       <div class="form-group mt-3">
@@ -21,7 +21,7 @@
 
       <div class="form-group mt-3">
         <%= f.label :email, class: "form-label" %>
-        <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", required: true %>
+        <%= f.email_field :email, class: "form-control", autocomplete: "email", required: true %>
       </div>
 
       <div class="form-group mt-3">
