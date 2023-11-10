@@ -114,6 +114,7 @@ fr:
         authorize:
           error: "Erreur d'autorisation du dispositif."
           success: "Dispositif autorisé avec succès."
+          can_close_page: "Vous pouvez à présent fermer cette page."
 
     layouts:
       admin:
