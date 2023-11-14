@@ -35,7 +35,7 @@ gem "redcarpet"
 gem "uglifier"
 gem "puma"
 gem "rack-timeout"
-gem "mysql2"
+gem "trilogy", group: :mysql
 gem "dotenv-rails", require: "dotenv/rails-now", groups: [:development, :test]
 gem "jsbundling-rails", "~> 1.2.1"
 gem "cssbundling-rails", "~> 1.3"

@@ -152,7 +152,6 @@ GEM
     mini_portile2 (2.8.4)
     minitest (5.20.0)
     mutex_m (0.1.2)
-    mysql2 (0.5.5)
     net-imap (0.4.0)
       date
       net-protocol
@@ -304,6 +303,7 @@ GEM
     stringio (3.0.8)
     thor (1.2.2)
     timeout (0.4.0)
+    trilogy (2.6.0)
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -344,7 +344,6 @@ DEPENDENCIES
   faker
   jsbundling-rails (~> 1.2.1)
   listen
-  mysql2
   pry-rails
   puma
   pundit (~> 2.3)
@@ -355,6 +354,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails_config
   sprockets-rails
+  trilogy
   turbo-rails
   uglifier
   web-console
