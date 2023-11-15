@@ -30,8 +30,8 @@ class User < ApplicationRecord
            class_name: "CustomApplication",
            as: :owner
 
-  validates :firstname, presence: true, length: { in: 2..30 }
-  validates :lastname, presence: true, length: { in: 2..30 }
+  validates :firstname, presence: true, length: {in: 2..30}
+  validates :lastname, presence: true, length: {in: 2..30}
 
   normalizes :firstname, with: ->(firstname) { firstname.gsub(USER_NAME_REGEX, "").to_s.patronize }
   normalizes :lastname, with: ->(lastname) { lastname.gsub(USER_NAME_REGEX, "").to_s.patronize }
