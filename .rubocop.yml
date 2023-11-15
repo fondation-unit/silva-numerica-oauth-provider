@@ -1,8 +1,30 @@
-require: rubocop-performance
+AllCops:
+  Exclude:
+    - db/migrate/**/*
+    - db/schema.rb
+    - config/**/*
+    - script/**/*
+    - bin/**/*
+    - test/**/*
+    - app/admin/**/*
+    - app/channels/**/*
+    - app/jobs/**/*
+    - node_modules/**/*
+    - Gemfile
+    - Rakefile
+    - config.ru
+    - Guardfile
+    - spec/spec_helper.rb
+    - spec/**/*.rb
+    - lib/tasks/auto_annotate_models.rake
+    - lib/custom_debug.rb
+  NewCops: enable
+  TargetRubyVersion: 3.2
+
+require:
+  - standard
+  - rubocop-rails
+  - rubocop-rspec
 
 inherit_gem:
-  rubocop-rails_config:
-    - config/rails.yml
-
-AllCops:
-  TargetRubyVersion: 2.3
+  standard: config/base.yml

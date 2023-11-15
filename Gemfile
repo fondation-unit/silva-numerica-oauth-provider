@@ -13,8 +13,6 @@ group :development do
   gem "web-console"
 
   gem "listen"
-  gem "rubocop-performance"
-  gem "rubocop-rails_config"
 end
 
 group :test do
@@ -27,8 +25,19 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 
   gem "pry-rails"
+
+  gem "guard"
+  gem "guard-rspec", require: false
+  gem "guard-rubocop"
+  gem "guard-reek"
+  gem "rubocop"
+  gem "rubocop-rails"
+  gem "rubocop-rspec"
+  gem "rubocop-performance"
+  gem "rubocop-rails_config"
 end
 
+gem "annotate"
 gem "faker"
 gem "coderay"
 gem "redcarpet"
