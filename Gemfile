@@ -29,6 +29,7 @@ group :development, :test do
   gem "pry-rails"
 end
 
+gem "annotate"
 gem "faker"
 gem "coderay"
 gem "redcarpet"
