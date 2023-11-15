@@ -30,15 +30,9 @@ class User < ApplicationRecord
            class_name: "CustomApplication",
            as: :owner
 
-  before_validation :cleanup_username
+  validates :firstname, presence: true, length: { in: 2..30 }
+  validates :lastname, presence: true, length: { in: 2..30 }
 
-  validates :firstname, presence: true, length: {in: 2..30}
-  validates :lastname, presence: true, length: {in: 2..30}
-
-  private
-
-    def cleanup_username
-      self.firstname = firstname.gsub(USER_NAME_REGEX, "").to_s.patronize
-      self.lastname = lastname.gsub(USER_NAME_REGEX, "").to_s.patronize
-    end
+  normalizes :firstname, with: ->(firstname) { firstname.gsub(USER_NAME_REGEX, "").to_s.patronize }
+  normalizes :lastname, with: ->(lastname) { lastname.gsub(USER_NAME_REGEX, "").to_s.patronize }
 end
